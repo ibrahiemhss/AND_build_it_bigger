@@ -40,8 +40,6 @@ public class MainActivityFragment extends Fragment implements LoaderManager.Load
                              Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_main, container, false);
 
-        initializeInterstitialAds();
-
         mProgressBar = root.findViewById(R.id.progress);
         AdView mAdView = root.findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder()
@@ -57,6 +55,7 @@ public class MainActivityFragment extends Fragment implements LoaderManager.Load
                 initLoader();
             }
         });
+        initializeInterstitialAds();
 
         return root;
     }
@@ -119,7 +118,6 @@ public class MainActivityFragment extends Fragment implements LoaderManager.Load
                     return new EndpointsAsyncTask(getActivity(), new AsyncTaskCompleteListener<String>() {
                         @Override
                         public void onTaskComplete(String result) {
-                            mProgressBar.setVisibility(View.GONE);
 
                         }
                     });
@@ -137,6 +135,7 @@ public class MainActivityFragment extends Fragment implements LoaderManager.Load
         if (data != null) {
             mJoke = data;
             addJokes(data);
+            mProgressBar.setVisibility(View.GONE);
         }
     }
 
