@@ -19,3 +19,5 @@ Jul 05, 2018 8:04:31 PM com.google.appengine.tools.development.AbstractModule st
 INFO: The admin console is running at http://localhost:8080/_ah/admin
 Jul 05, 2018 10:04:31 PM com.google.appengine.tools.development.DevAppServerImpl doStart
 INFO: Dev App Server is now running
+Jul 05, 2018 10:39:53 PM java.util.prefs.FileSystemPreferences syncWorld
+WARNING: Couldn't flush user prefs: java.util.prefs.BackingStoreException: Couldn't get file lock.
