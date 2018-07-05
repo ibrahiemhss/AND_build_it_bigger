@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?><!--suppress XmlUnboundNsPrefix -->
+<resources>
+    <string name="app_name">paid Build it Bigger</string>
+    <string name="instructions">Press the button for a delicious joke!</string>
+    <string name="paid_note">Paid version no Ads</string>
+    <string name="button_text">Tell Joke</string>
+    <string name="action_settings">Settings</string>
+</resources>
