@@ -6,10 +6,11 @@ import android.support.v4.content.Loader;
 import junit.framework.Assert;
 
 /*
- * Created by ibrahim on 05/07/18.
+ * Created by ibrahim on 07/07/18.
  */
 
 class LoaderUtils {
+
     public static void waitForLoader(Loader<?> loader) {
 
         final AsyncTaskLoader<?> asyncTaskLoader

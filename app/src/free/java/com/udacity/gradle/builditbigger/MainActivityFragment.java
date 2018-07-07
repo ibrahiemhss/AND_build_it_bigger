@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
 
+
 import com.example.displayjokes.JokeActivity;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -59,10 +60,12 @@ public class MainActivityFragment extends Fragment implements LoaderManager.Load
 
         return root;
     }
-
     private void initLoader() {
         if (getActivity() != null) {
+
             getActivity().getSupportLoaderManager().restartLoader(LOADER_ID, null, this);
+
+
 
         }
     }

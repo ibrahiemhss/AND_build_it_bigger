@@ -11,5 +11,6 @@ public interface AsyncTaskCompleteListener<T> {
      *
      * @param result The resulting object from the AsyncTask.
      */
+    @SuppressWarnings("EmptyMethod")
     void onTaskComplete(T result);
 }

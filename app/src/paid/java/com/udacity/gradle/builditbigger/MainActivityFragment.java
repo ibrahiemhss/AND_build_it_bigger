@@ -58,12 +58,6 @@ public class MainActivityFragment extends Fragment implements LoaderManager.Load
     }
 
 
-    private void requestNewInterstitial() {
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mInterstitialAd.loadAd(adRequest);
-    }
-
-
     public void addJokes(String mJoke) {
 
         if (mJoke != null) {
