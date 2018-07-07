@@ -15,6 +15,7 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
@@ -24,20 +25,22 @@ import static android.support.test.internal.runner.junit4.statement.UiThreadStat
  * Created by ibrahim on 07/07/18.
  */
 @RunWith(AndroidJUnit4.class)
-public class TestAsyncLoader implements LoaderManager.LoaderCallbacks<String>{
-    private String getJoke;
+public class TestAsyncLoader implements LoaderManager.LoaderCallbacks<String> {
     private static final int LOADER_ID = 2;
-    private Activity activity;
-    private MainActivity mainActivity;
     @Rule
     public final ActivityTestRule<MainActivity> activityActivityTestRule = new ActivityTestRule<>(MainActivity.class);
+    private String getJoke;
+    private Activity activity;
+    private MainActivity mainActivity;
+
     @Before
     public void setUp() throws Throwable {
-        activity=activityActivityTestRule.getActivity();
-        mainActivity=activityActivityTestRule.getActivity();
+        activity = activityActivityTestRule.getActivity();
+        mainActivity = activityActivityTestRule.getActivity();
         runThread();
 
     }
+
     @Test
     public void clickButton() throws Exception {
         Loader<?> loader =
@@ -46,12 +49,12 @@ public class TestAsyncLoader implements LoaderManager.LoaderCallbacks<String>{
 
         if (getJoke != null) {
             onView(withText(R.string.button_text)).perform(click());
-        }
-        else {
-                throw new Exception("value from Loader =" + null);
+        } else {
+            throw new Exception("value from Loader =" + null);
         }
 
     }
+
     @NonNull
     @Override
     public Loader<String> onCreateLoader(int id, Bundle args) {
@@ -90,12 +93,12 @@ public class TestAsyncLoader implements LoaderManager.LoaderCallbacks<String>{
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-               initializeLoader();
+                initializeLoader();
             }
         });
     }
 
-    private void initializeLoader(){
+    private void initializeLoader() {
         mainActivity.getSupportLoaderManager().restartLoader(LOADER_ID, null, this);
 
     }

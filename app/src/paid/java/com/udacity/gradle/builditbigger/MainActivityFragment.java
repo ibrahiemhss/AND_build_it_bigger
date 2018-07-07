@@ -12,8 +12,6 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 
 import com.example.displayjokes.JokeActivity;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.InterstitialAd;
 import com.udacity.gradle.builditbigger.util.AsyncTaskCompleteListener;
 import com.udacity.gradle.builditbigger.util.EndpointsAsyncTask;
 
@@ -26,7 +24,6 @@ public class MainActivityFragment extends Fragment implements LoaderManager.Load
     public static final int LOADER_ID = 2;
     public static String JOKE_KEY = "Joke key";
     private String mJoke;
-    private InterstitialAd mInterstitialAd;
     private Button mTelJokeBtn;
     private ProgressBar mProgressBar;
 
@@ -41,6 +38,12 @@ public class MainActivityFragment extends Fragment implements LoaderManager.Load
 
         mProgressBar = root.findViewById(R.id.progress);
         mTelJokeBtn = root.findViewById(R.id.btn_get_Jokes);
+        return root;
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
         mTelJokeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -48,8 +51,6 @@ public class MainActivityFragment extends Fragment implements LoaderManager.Load
                 initLoader();
             }
         });
-
-        return root;
     }
 
     public void initLoader() {

@@ -11,6 +11,7 @@ import android.view.MenuItem;
 public class JokeActivity extends AppCompatActivity {
 
     public static final String JOKE_KEY = "Joke key";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +20,7 @@ public class JokeActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event)  {
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (Integer.parseInt(android.os.Build.VERSION.SDK) > 5
                 && keyCode == KeyEvent.KEYCODE_BACK
                 && event.getRepeatCount() == 0) {
@@ -34,13 +35,14 @@ public class JokeActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         try {
-            Intent myIntent = new Intent(this,Class.forName("com.udacity.gradle.builditbigger.MainActivity"));
-            startActivity(myIntent );
+            Intent myIntent = new Intent(this, Class.forName("com.udacity.gradle.builditbigger.MainActivity"));
+            startActivity(myIntent);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
 
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
